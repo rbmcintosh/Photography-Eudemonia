@@ -1,0 +1,17 @@
+Fonts:
+
+Main Font: BebasNeue
+Slogan Font: Jenna Sue
+Body font: montserrat
+
+Colors:
+
+White (Main Font)
+
+Hex: #fff
+RGB: rgb(255, 255, 255)
+
+Bay Leaf (Slogan Font)
+
+Hex: #85aa95
+RGB: rgb(133, 170, 149)

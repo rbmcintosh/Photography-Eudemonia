@@ -1,0 +1,255 @@
+{
+  "errors": [
+    "./src/index.scss\nModule parse failed: Unexpected token (7:12)\nYou may need an appropriate loader to handle this file type.\n| // #d7dfe9 blueish grey\n| \n| $color-white: #fff;\n| $color-darkgreen: #61892f;\n| $color-lightgreen: #86C232;\n @ ./src/index.js 1:0-22"
+  ],
+  "warnings": [
+    "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/"
+  ],
+  "version": "4.6.0",
+  "hash": "661a7208482d8c7dec9e",
+  "time": 187,
+  "builtAt": 1525043555990,
+  "publicPath": "",
+  "outputPath": "/home/odin/projects/photographyEudemonia/dist",
+  "assetsByChunkName": {
+    "main": "main.js"
+  },
+  "assets": [
+    {
+      "name": "main.js",
+      "size": 3757,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 7416,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "main.js"
+      ],
+      "hash": "1c8d34c8bc172d6b1b19",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/home/odin/projects/photographyEudemonia/src/index.scss",
+          "name": "./src/index.scss",
+          "index": 1,
+          "index2": 0,
+          "size": 241,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/home/odin/projects/photographyEudemonia/src/index.js",
+          "issuerId": 1,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": 1,
+              "identifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": true,
+          "errors": 1,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./index.scss",
+              "loc": "1:0-22"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "throw new Error(\"Module parse failed: Unexpected token (7:12)\\nYou may need an appropriate loader to handle this file type.\\n| // #d7dfe9 blueish grey\\n| \\n| $color-white: #fff;\\n| $color-darkgreen: #61892f;\\n| $color-lightgreen: #86C232;\");"
+        },
+        {
+          "id": 1,
+          "identifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 1,
+          "size": 7175,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "import './index.scss';\n\nvar albumsList = [\n  { name: 'india', count: 22 },\n  { name: 'nola', count: 6 },\n  { name: 'atx', count: 9 }\n];\n\nvar browserWidth = () => { return document.documentElement.clientWidth; };\nvar browserHeight = () => { return document.documentElement.clientHeight; };\nvar imageGallery = () => { return document.querySelector(\".gallery_container\"); };\nvar desktopGalleryMultiplier = () => { return browserWidth() > 1200 ? .8 : .95; };\n\nvar galleryElem = document.getElementById('gallery');\nvar galleryMain = galleryElem.querySelector('main');\n\nvar headerBg = new Image();\nif (browserWidth() > browserHeight()) {\n  headerBg.src = 'static/images/gallery/compressed/india/INDIA1.jpg';\n} else {\n  headerBg.src = 'static/images/gallery/compressed/india/INDIA1.jpg';\n}\nvar headerMain = document.getElementById(\"header\").querySelector('main');\nvar headerTitle = headerMain.firstElementChild;\nheaderBg.onload = () => {\n  headerMain.style.backgroundImage = `url('${headerBg.src}')`;\n  headerMain.style.height = browserHeight() * .95 + 'px';\n  headerTitleSetter(headerBg,headerTitle);\n};\n\nvar newImgHeight = (containerWidth,img) => { return ((containerWidth / img.width) * img.height); };\n\nfunction headerHeightSetter(headerBg,headerMain) {\n  headerMain.style.height = browserHeight() * .95 + 'px';\n}\n\nfunction headerTitleSetter(headerBg,headerTitle) {\n  headerTitle.style.top = newImgHeight(browserWidth(),headerBg) * .58 + 'px';\n  headerTitle.style.display = 'flex';\n  if (headerTitle.style.opacity == 0) { setTimeout(() => {\n    headerTitle.style.opacity = 1;\n  }, 300)}\n}\n\nfunction imageSizeSetter(oldImg) {\n  const coords = oldImg.getBoundingClientRect();\n  const currX = coords.left;\n  const currY = coords.top;\n  const imgWidth = oldImg.width;\n  const imgHeight = oldImg.height;\n  const newX = (browserWidth() - imgWidth) / 2.1;\n  const newY = (browserHeight() - imgHeight) / 2.1;\n  const transX = (currX > newX) ? (currX - newX)*-1 : newX - currX;\n  const transY = (currY > newY) ? (currY - newY)*-1 : newY - currY;\n  let newPos = `translate(${transX}px, ${transY}px)`;\n  return newPos;\n}\n\nfunction imageSwapper(img,thumbHeight) {\n  let zoom = img.classList.contains('zoom');\n  if (!zoom) {\n    return swapper(/\\.(\\d00)?\\.jpg/,`.${thumbHeight}.jpg`);\n  } else {\n    if (browserWidth() < 1000) {\n      return swapper(/\\d00\\./,'800.');\n    }\n    return swapper(/\\d00\\./,'');\n  }\n\n  function swapper(pattern,replace) {\n    let swapImage = img;\n    swapImage.src = img.src.replace(pattern,replace);\n    return swapImage;\n  }\n}\n\nfunction documentHeight() {\n  var body = document.body,\n      html = document.documentElement;\n\n  return Math.max( body.scrollHeight, body.offsetHeight,\n         html.clientHeight, html.scrollHeight, html.offsetHeight );\n}\n\nbuildImageArray(albumsList);\n\nvar imagesOK = 0;\n\nvar totalImages = albumsList.reduce((a,b) => {\n  return a + b.count;\n},0);\n\nfunction buildImageArray(albums) {\n  var imageArray = [];\n  let galleryPicSize = browserWidth() < 1000 ? '300' : '300';\n\n  for (let j=0; j<albums.length; j++) {\n    let albumName = albums[j].name;\n    let albumPath = `static/images/gallery/compressed/${albumName}/`;\n    albumPath += `${albumName.toUpperCase()}`;\n\n    for (var i=1; i<=albums[j].count; i++) {\n      let galleryPic = new Image();\n          galleryPic.src = `${albumPath + i}.${galleryPicSize}.jpg`;\n          galleryPic.alt = `Image ${albumName + i}`;\n          galleryPic.className = \"gallery_image\";\n          galleryPic.style.width = galleryPic.width + 'px';\n          galleryPic.onclick = function() {\n            let lightbox = document.querySelector('.gallery__lightboxbackground');\n            lightbox.onclick = () => {\n              lightbox.classList.toggle('dim');\n              galleryPic.classList.toggle('zoom');\n              galleryPic.style.transform = '';\n            }\n            lightbox.classList.toggle('dim');\n            galleryPic.classList.toggle('zoom');\n            if (galleryPic.classList.contains('zoom')) {\n              galleryPic.style.transform = imageSizeSetter(galleryPic);\n              setTimeout(() => {\n                const scale = () => {\n                  if (browserWidth() > browserHeight()) {\n                    return (browserHeight() / galleryPic.height) * .9;\n                  } else {\n                    return (browserWidth() / galleryPic.width) * .9;\n                  }\n                };\n                let transformer = `scale(${scale()})`;\n                galleryPic.style.transform += transformer;\n              }, 1);\n              let newImg = imageSwapper(galleryPic,galleryPicSize);\n              newImg.onload = () => {\n                galleryPic = newImg;\n              }\n            } else {\n              galleryPic.style.transform = '';\n              let newImg = imageSwapper(galleryPic,galleryPicSize);\n              newImg.onload = () => {\n                galleryPic = newImg;\n              }\n            }\n          }\n          galleryPic.onload = function(){\n            imagesOK++;\n            if (imagesOK>=totalImages) {\n              setTimeout(() => {\n                let galleryContainer = createGalleryContainer(imageArray);\n                galleryMain.appendChild(fitRowWidthToWindow(galleryContainer));\n                let lightbox_background = document.querySelector(\".gallery__lightboxbackground\");\n                lightbox_background.style.height = documentHeight() + 'px';\n              }, 201);\n            }\n          };\n      imageArray.push(galleryPic);\n    }\n  }\n}\n\nfunction createGalleryContainer(imageArray) {\n\n  galleryMain.style.width = (browserWidth() * desktopGalleryMultiplier()) + 'px';\n\n  let galleryContainer = document.createElement(\"div\");\n  galleryContainer.className = \"gallery_container\";\n\n  var thisRow;\n  let picArray = [];\n\n  for (var i=0; i<imageArray.length; i++) {\n    if (thisRow === undefined) {\n      thisRow = document.createElement(\"div\");\n      thisRow.className = \"gallery_row\";\n    }\n\n    thisRow.appendChild(imageArray[i]);\n    picArray.push(imageArray[i].width);\n\n    let sumTotalWidth = picArray.reduce((a,b) => {\n      return a+b;\n    });\n\n    if (sumTotalWidth > (browserWidth() * desktopGalleryMultiplier())\n        && !(imageArray.length-i==1)) {\n      galleryContainer.appendChild(thisRow);\n      thisRow = undefined;\n      sumTotalWidth = 0;\n      picArray = [];\n    }\n  }\n  return galleryContainer;\n}\n\nfunction fitRowWidthToWindow(gallery) {\n  let rows = gallery.children;\n  for (let i=0; i<rows.length; i++) {\n    let rowImgs = rows[i].children;\n    let totalWidth = [];\n    for (let j=0; j<rowImgs.length; j++) {\n      totalWidth.push(rowImgs[j].width);\n    }\n    let sumTotalWidth = totalWidth.reduce((a,b) => {\n      return a+b;\n    });\n    let newPercent = ((browserWidth() * desktopGalleryMultiplier()) / sumTotalWidth);\n    for (let j=0; j<rowImgs.length; j++) {\n      let imgWidth = Math.floor(newPercent * rowImgs[j].width);\n      rowImgs[j].style.width = imgWidth + 'px';\n    }\n  }\n  return gallery;\n}\n\nwindow.addEventListener('resize', () => {\n  headerHeightSetter(headerBg,headerMain);\n  headerTitleSetter(headerBg,headerTitle);\n  fitRowWidthToWindow(imageGallery());\n});\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./src",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/home/odin/projects/photographyEudemonia/src/index.scss",
+      "name": "./src/index.scss",
+      "index": 1,
+      "index2": 0,
+      "size": 241,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/home/odin/projects/photographyEudemonia/src/index.js",
+      "issuerId": 1,
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": 1,
+          "identifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+          "name": "./src/index.js"
+        }
+      ],
+      "failed": true,
+      "errors": 1,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./index.scss",
+          "loc": "1:0-22"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "throw new Error(\"Module parse failed: Unexpected token (7:12)\\nYou may need an appropriate loader to handle this file type.\\n| // #d7dfe9 blueish grey\\n| \\n| $color-white: #fff;\\n| $color-darkgreen: #61892f;\\n| $color-lightgreen: #86C232;\");"
+    },
+    {
+      "id": 1,
+      "identifier": "/home/odin/projects/photographyEudemonia/src/index.js",
+      "name": "./src/index.js",
+      "index": 0,
+      "index2": 1,
+      "size": 7175,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src",
+          "loc": "main"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is an entry point"
+      ],
+      "depth": 0,
+      "source": "import './index.scss';\n\nvar albumsList = [\n  { name: 'india', count: 22 },\n  { name: 'nola', count: 6 },\n  { name: 'atx', count: 9 }\n];\n\nvar browserWidth = () => { return document.documentElement.clientWidth; };\nvar browserHeight = () => { return document.documentElement.clientHeight; };\nvar imageGallery = () => { return document.querySelector(\".gallery_container\"); };\nvar desktopGalleryMultiplier = () => { return browserWidth() > 1200 ? .8 : .95; };\n\nvar galleryElem = document.getElementById('gallery');\nvar galleryMain = galleryElem.querySelector('main');\n\nvar headerBg = new Image();\nif (browserWidth() > browserHeight()) {\n  headerBg.src = 'static/images/gallery/compressed/india/INDIA1.jpg';\n} else {\n  headerBg.src = 'static/images/gallery/compressed/india/INDIA1.jpg';\n}\nvar headerMain = document.getElementById(\"header\").querySelector('main');\nvar headerTitle = headerMain.firstElementChild;\nheaderBg.onload = () => {\n  headerMain.style.backgroundImage = `url('${headerBg.src}')`;\n  headerMain.style.height = browserHeight() * .95 + 'px';\n  headerTitleSetter(headerBg,headerTitle);\n};\n\nvar newImgHeight = (containerWidth,img) => { return ((containerWidth / img.width) * img.height); };\n\nfunction headerHeightSetter(headerBg,headerMain) {\n  headerMain.style.height = browserHeight() * .95 + 'px';\n}\n\nfunction headerTitleSetter(headerBg,headerTitle) {\n  headerTitle.style.top = newImgHeight(browserWidth(),headerBg) * .58 + 'px';\n  headerTitle.style.display = 'flex';\n  if (headerTitle.style.opacity == 0) { setTimeout(() => {\n    headerTitle.style.opacity = 1;\n  }, 300)}\n}\n\nfunction imageSizeSetter(oldImg) {\n  const coords = oldImg.getBoundingClientRect();\n  const currX = coords.left;\n  const currY = coords.top;\n  const imgWidth = oldImg.width;\n  const imgHeight = oldImg.height;\n  const newX = (browserWidth() - imgWidth) / 2.1;\n  const newY = (browserHeight() - imgHeight) / 2.1;\n  const transX = (currX > newX) ? (currX - newX)*-1 : newX - currX;\n  const transY = (currY > newY) ? (currY - newY)*-1 : newY - currY;\n  let newPos = `translate(${transX}px, ${transY}px)`;\n  return newPos;\n}\n\nfunction imageSwapper(img,thumbHeight) {\n  let zoom = img.classList.contains('zoom');\n  if (!zoom) {\n    return swapper(/\\.(\\d00)?\\.jpg/,`.${thumbHeight}.jpg`);\n  } else {\n    if (browserWidth() < 1000) {\n      return swapper(/\\d00\\./,'800.');\n    }\n    return swapper(/\\d00\\./,'');\n  }\n\n  function swapper(pattern,replace) {\n    let swapImage = img;\n    swapImage.src = img.src.replace(pattern,replace);\n    return swapImage;\n  }\n}\n\nfunction documentHeight() {\n  var body = document.body,\n      html = document.documentElement;\n\n  return Math.max( body.scrollHeight, body.offsetHeight,\n         html.clientHeight, html.scrollHeight, html.offsetHeight );\n}\n\nbuildImageArray(albumsList);\n\nvar imagesOK = 0;\n\nvar totalImages = albumsList.reduce((a,b) => {\n  return a + b.count;\n},0);\n\nfunction buildImageArray(albums) {\n  var imageArray = [];\n  let galleryPicSize = browserWidth() < 1000 ? '300' : '300';\n\n  for (let j=0; j<albums.length; j++) {\n    let albumName = albums[j].name;\n    let albumPath = `static/images/gallery/compressed/${albumName}/`;\n    albumPath += `${albumName.toUpperCase()}`;\n\n    for (var i=1; i<=albums[j].count; i++) {\n      let galleryPic = new Image();\n          galleryPic.src = `${albumPath + i}.${galleryPicSize}.jpg`;\n          galleryPic.alt = `Image ${albumName + i}`;\n          galleryPic.className = \"gallery_image\";\n          galleryPic.style.width = galleryPic.width + 'px';\n          galleryPic.onclick = function() {\n            let lightbox = document.querySelector('.gallery__lightboxbackground');\n            lightbox.onclick = () => {\n              lightbox.classList.toggle('dim');\n              galleryPic.classList.toggle('zoom');\n              galleryPic.style.transform = '';\n            }\n            lightbox.classList.toggle('dim');\n            galleryPic.classList.toggle('zoom');\n            if (galleryPic.classList.contains('zoom')) {\n              galleryPic.style.transform = imageSizeSetter(galleryPic);\n              setTimeout(() => {\n                const scale = () => {\n                  if (browserWidth() > browserHeight()) {\n                    return (browserHeight() / galleryPic.height) * .9;\n                  } else {\n                    return (browserWidth() / galleryPic.width) * .9;\n                  }\n                };\n                let transformer = `scale(${scale()})`;\n                galleryPic.style.transform += transformer;\n              }, 1);\n              let newImg = imageSwapper(galleryPic,galleryPicSize);\n              newImg.onload = () => {\n                galleryPic = newImg;\n              }\n            } else {\n              galleryPic.style.transform = '';\n              let newImg = imageSwapper(galleryPic,galleryPicSize);\n              newImg.onload = () => {\n                galleryPic = newImg;\n              }\n            }\n          }\n          galleryPic.onload = function(){\n            imagesOK++;\n            if (imagesOK>=totalImages) {\n              setTimeout(() => {\n                let galleryContainer = createGalleryContainer(imageArray);\n                galleryMain.appendChild(fitRowWidthToWindow(galleryContainer));\n                let lightbox_background = document.querySelector(\".gallery__lightboxbackground\");\n                lightbox_background.style.height = documentHeight() + 'px';\n              }, 201);\n            }\n          };\n      imageArray.push(galleryPic);\n    }\n  }\n}\n\nfunction createGalleryContainer(imageArray) {\n\n  galleryMain.style.width = (browserWidth() * desktopGalleryMultiplier()) + 'px';\n\n  let galleryContainer = document.createElement(\"div\");\n  galleryContainer.className = \"gallery_container\";\n\n  var thisRow;\n  let picArray = [];\n\n  for (var i=0; i<imageArray.length; i++) {\n    if (thisRow === undefined) {\n      thisRow = document.createElement(\"div\");\n      thisRow.className = \"gallery_row\";\n    }\n\n    thisRow.appendChild(imageArray[i]);\n    picArray.push(imageArray[i].width);\n\n    let sumTotalWidth = picArray.reduce((a,b) => {\n      return a+b;\n    });\n\n    if (sumTotalWidth > (browserWidth() * desktopGalleryMultiplier())\n        && !(imageArray.length-i==1)) {\n      galleryContainer.appendChild(thisRow);\n      thisRow = undefined;\n      sumTotalWidth = 0;\n      picArray = [];\n    }\n  }\n  return galleryContainer;\n}\n\nfunction fitRowWidthToWindow(gallery) {\n  let rows = gallery.children;\n  for (let i=0; i<rows.length; i++) {\n    let rowImgs = rows[i].children;\n    let totalWidth = [];\n    for (let j=0; j<rowImgs.length; j++) {\n      totalWidth.push(rowImgs[j].width);\n    }\n    let sumTotalWidth = totalWidth.reduce((a,b) => {\n      return a+b;\n    });\n    let newPercent = ((browserWidth() * desktopGalleryMultiplier()) / sumTotalWidth);\n    for (let j=0; j<rowImgs.length; j++) {\n      let imgWidth = Math.floor(newPercent * rowImgs[j].width);\n      rowImgs[j].style.width = imgWidth + 'px';\n    }\n  }\n  return gallery;\n}\n\nwindow.addEventListener('resize', () => {\n  headerHeightSetter(headerBg,headerMain);\n  headerTitleSetter(headerBg,headerTitle);\n  fitRowWidthToWindow(imageGallery());\n});\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
