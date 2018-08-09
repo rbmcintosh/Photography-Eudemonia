@@ -1,3 +1,7 @@
 cabilgibbs.com
 stats.json
 appveyor.yml
+.editorconfig
+.htmllintrc
+testImage/
+.travis.yml
