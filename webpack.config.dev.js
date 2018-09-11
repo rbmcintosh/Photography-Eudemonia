@@ -13,24 +13,24 @@ module.exports = {
   entry: "./src/index.js",
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        exclude: /(node_modules)/,
-        use: [
-          {
-            loader: "htmllint-loader",
-            options: {
-              config: ".htmllintrc",
-              failOnError: true,
-              failOnWarning: false,
-              minimize: true
-            }
-          },
-          {
-            loader: "html-loader",
-          }
-        ]
-      },
+      // {
+      //   test: /\.html$/,
+      //   exclude: /(node_modules)/,
+      //   use: [
+      //     {
+      //       loader: "htmllint-loader",
+      //       options: {
+      //         config: ".htmllintrc",
+      //         failOnError: true,
+      //         failOnWarning: false,
+      //         minimize: true
+      //       }
+      //     },
+      //     {
+      //       loader: "html-loader",
+      //     }
+      //   ]
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
